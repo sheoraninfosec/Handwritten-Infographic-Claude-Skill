@@ -1,0 +1,74 @@
+{
+  "layout": "explainer",
+  "title": "WIREGUARD",
+  "series": "1 OF 3",
+  "accent": "#0B7A80",
+  "byline": "JIGESH SHEORAN",
+
+  "blurbs": {
+    "left": {
+      "heading": "WHAT IT IS:",
+      "body": "Under 4,000 lines of kernel code doing one job with one set of ciphers.",
+      "draw": "A dark code editor window showing `static int wg_xmit(....) {`, a Linux penguin standing beside it, and a small shield badge reading `<4000 LINES`."
+    },
+    "right": {
+      "heading": "WHY IT WON:",
+      "body": "Small enough to audit end to end, and fast enough that nobody argues about it.",
+      "draw": "A clipboard headed `AUDIT` with three ticked checkboxes, next to a stopwatch drawn with motion lines behind it."
+    }
+  },
+
+  "how": {
+    "heading": "HOW IT WORKS",
+    "subtitle": "Four design decisions that define the protocol.",
+    "cards": [
+      {
+        "heading": "PUBLIC KEYS ONLY",
+        "body": "Each peer is identified by a single 32-byte public key. No certificates, no usernames, no PKI to run.",
+        "draw": "A key joined to a short pipe with an arrow pointing to a second key, above a paper certificate with a wax seal struck through by a large red cross."
+      },
+      {
+        "heading": "CRYPTOKEY ROUTING",
+        "body": "Each key is bound to a list of allowed IPs. That one table decides who may send what, and where it goes.",
+        "draw": "A two-column table headed `PUBLIC KEY` and `ALLOWED IPS` with four rows of key glyphs and CIDR ranges, one row highlighted, an arrow leaving it toward a network port."
+      },
+      {
+        "heading": "ONE FIXED SUITE",
+        "body": "ChaCha20 with Poly1305, Curve25519, BLAKE2s. Nothing is negotiated, so there is nothing to downgrade.",
+        "draw": "A closed box labelled `ONE SUITE` with a green tick beside it, next to a folded menu card listing `AES-GCM`, `AES-CBC`, `DES`, `3DES`, `RC4` all struck through in red."
+      },
+      {
+        "heading": "SILENT BY DEFAULT",
+        "body": "It never replies to an unauthenticated packet. To a port scanner the service looks like it is not there.",
+        "draw": "A dark server rack with a large magnifying glass held over it showing only three dots inside, and an empty speech bubble containing three dots."
+      }
+    ]
+  },
+
+  "costs": {
+    "heading": "WHAT IT COSTS YOU",
+    "subtitle": "The trade-offs that come with being this small.",
+    "cards": [
+      {
+        "heading": "UDP ONLY",
+        "body": "There is no TCP fallback. If the network blocks UDP, you are simply not connecting.",
+        "draw": "A wide pipe labelled `UDP` slamming into a brick wall and shattering at the point of contact."
+      },
+      {
+        "heading": "THE PEER MAPPING",
+        "body": "The server keeps the key-to-IP table. On somebody else's server that is a persistent identifier for you.",
+        "draw": "An open ledger book with columns `PUBLIC KEY` and `LAST SEEN IP`, four rows, one highlighted, and a large eye watching from above a server rack."
+      },
+      {
+        "heading": "KEY MANAGEMENT IS YOURS",
+        "body": "No usernames, no per-user credentials, no simple revocation once you have many peers.",
+        "draw": "An open upturned hand with four keys floating above it and a question mark hanging among them."
+      },
+      {
+        "heading": "ALL ENDPOINTS UPDATE TOGETHER",
+        "body": "No cipher agility means if a primitive ever breaks, everything must be upgraded at once.",
+        "draw": "A clock at the top connected by branching lines to four devices in a row, each with an upward arrow beneath it."
+      }
+    ]
+  }
+}

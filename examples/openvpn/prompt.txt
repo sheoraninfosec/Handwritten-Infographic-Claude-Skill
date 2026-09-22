@@ -1,0 +1,151 @@
+Create a hand-drawn educational infographic in the style of a senior engineer's
+marker notes, scanned perfectly flat.
+
+CANVAS
+- Exactly 1024 x 1536 pixels. Portrait, 2:3. All content fits inside with no
+  cropping and no overflow.
+- Background is flat off-white #F7F8F8. Not pure white. Absolutely no paper
+  texture, grain, noise, vignette, shadow or physical-surface feel. Treat it as
+  a clean digital canvas.
+
+STYLE
+- Every line is hand-drawn with markers: slightly imperfect, energetic, clean.
+- Headings are marker-drawn block capitals. Body text is casual handwriting,
+  legible, slightly uneven. Nothing uses a clean digital typeface.
+- Illustrations are rough hand-drawn sketches with flat colour fills. Not
+  clipart, not flat vector icons, not 3D renders, not photographs.
+- No whiteboard frame, no sticky notes, no coloured card backgrounds behind
+  text, no drop shadows, no banner bars behind headings.
+
+COLOUR
+- Ink (title, body text, outlines): #192635
+- Accent (section 1 heading and rule, numbered circles, blurb headings): #CF5E16
+- Warning (section 2 heading and rule, cost card headings, warning triangles): #C62828
+- Illustrations may use the real brand colours of whatever they depict.
+
+TEXT ACCURACY — THIS MATTERS MORE THAN THE ART
+- Render every piece of text below EXACTLY as written. Do not paraphrase,
+  shorten, translate or improvise text.
+- Spell technical terms character by character as given.
+- Do not add any text, label, caption or watermark that is not specified below.
+- Every numbered item must show its number. The numbers run 1 to 8 continuously
+  across both sections and never restart.
+
+
+=== LAYOUT, TOP TO BOTTOM ===
+
+1. TITLE BLOCK
+Centred, very large bold ALL-CAPS marker lettering in #192635:
+
+    OPENVPN
+
+Directly beneath the title, smaller, centred, in #192635:
+
+    2 OF 3
+
+Beneath it, a hand-drawn horizontal rule in #CF5E16 spanning most of the width.
+
+2. TWO INTRO BLURBS, side by side
+Each has a sketch on top, then a heading, then three lines of handwritten body
+text. Leave a large gap (about 70 px of empty space) between this zone and the
+section heading below it, so they read as two separate zones.
+
+
+LEFT BLURB
+  Sketch: A browser window showing a green padlock and the text `https://`, with a globe tilted behind its right edge.
+  Heading (ALL CAPS, #CF5E16, underlined): WHAT IT IS:
+  Body: A tunnel built on the same TLS your browser already uses, running in userspace.
+
+
+RIGHT BLURB
+  Sketch: A hand-drawn cloud labelled `TCP 443` with a green ticked shield in front of it and a server stack behind.
+  Heading (ALL CAPS, #CF5E16, underlined): WHY IT SURVIVES:
+  Body: It can sit on TCP 443 and become almost indistinguishable from normal web traffic.
+
+
+3. SECTION ONE
+
+  Heading (large, bold, ALL CAPS, #CF5E16, centred, underlined with a hand-drawn rule):
+    HOW IT WORKS
+  Subtitle (one line, sentence case, centred, ink):
+    Four design decisions that define the protocol.
+
+  Four cards in a row. Each card: the number, then the heading, then the
+  body text, then the sketch below it.
+
+  CARD 1
+    Number: the number "1" inside a hand-drawn outline circle in #CF5E16
+    Heading (ALL CAPS, ink): TLS UNDERNEATH
+    Body: The tunnel is established with the same handshake your browser performs, through OpenSSL or mbedTLS.
+    Sketch: A browser window with a green padlock, an orange beam labelled `TLS` running from it into the mouth of a stone tunnel.
+
+  CARD 2
+    Number: the number "2" inside a hand-drawn outline circle in #CF5E16
+    Heading (ALL CAPS, ink): CERTIFICATES AND USERS
+    Body: Full X.509 identity, optional username and password, and revocation lists for taking access away.
+    Sketch: A certificate headed `X.509` with a ribbon seal, beside a list headed `REVOKED LIST` with `user2` struck through in red, and a user avatar above.
+
+  CARD 3
+    Number: the number "3" inside a hand-drawn outline circle in #CF5E16
+    Heading (ALL CAPS, ink): RUNS IN USERSPACE
+    Body: It is an ordinary program, not kernel code. Easy to port and sandbox, slower than a kernel datapath.
+    Sketch: A box labelled `APPLICATION (OPENVPN)` above a dashed line, a box labelled `KERNEL` below it, and two envelopes crossing the line between them.
+
+  CARD 4
+    Number: the number "4" inside a hand-drawn outline circle in #CF5E16
+    Heading (ALL CAPS, ink): ANY TRANSPORT, ANY PORT
+    Body: UDP or TCP, on whichever port you choose, including 443 where it blends into HTTPS.
+    Sketch: A cartoon parcel labelled `PACKET` wearing sunglasses, walking confidently past a guard booth labelled `FILTER` with its barrier raised.
+
+
+4. SECTION TWO
+
+  Heading (large, bold, ALL CAPS, #C62828, centred, underlined with a hand-drawn rule):
+    WHAT IT COSTS YOU
+  Subtitle (one line, sentence case, centred, ink):
+    The price of all that flexibility.
+
+  Four cards in a row. Each card: the number, then the heading, then the
+  body text, then the sketch below it.
+
+  CARD 5
+    Number: a warning triangle in #C62828, then the number "5." with a full stop
+    Heading (ALL CAPS, #C62828): A LARGE ATTACK SURFACE
+    Body: Hundreds of thousands of lines once the TLS library is counted. More to audit and more to patch.
+    Sketch: A tall stack of paper labelled `OPENVPN + TLS LIB` with a magnifying glass resting against its side.
+
+  CARD 6
+    Number: a warning triangle in #C62828, then the number "6." with a full stop
+    Heading (ALL CAPS, #C62828): SLOWER
+    Body: Userspace processing and per-packet overhead leave it measurably behind kernel datapaths on throughput and latency.
+    Sketch: Two horizontal bars, a short one labelled `OPENVPN (USERSPACE)` and a longer one labelled `KERNEL DATAPATH`, with a stopwatch beside them.
+
+  CARD 7
+    Number: a warning triangle in #C62828, then the number "7." with a full stop
+    Heading (ALL CAPS, #C62828): EASY TO MISCONFIGURE
+    Body: A wide configuration surface and negotiated ciphers mean weak setups are entirely possible.
+    Sketch: A numbered config file headed `client.conf` with three of its twelve lines struck through in red, and a large question mark beside it.
+
+  CARD 8
+    Number: a warning triangle in #C62828, then the number "8." with a full stop
+    Heading (ALL CAPS, #C62828): TCP OVER TCP
+    Body: Running it on TCP for stealth stacks one retransmission scheme on another and collapses under packet loss.
+    Sketch: A wide pipe labelled `TCP` with a narrower pipe labelled `TCP` inside it, the inner one knotted and tangled at the far end, envelopes spilling out.
+
+
+5. BYLINE
+Bottom right corner, small ALL-CAPS lettering in #192635:
+
+    JIGESH SHEORAN
+
+
+=== RULES THE RENDER MUST OBEY ===
+
+- Do NOT draw the topic name anywhere except the title block at the very top.
+  No second title, no heading repeating the subject above a section.
+- Numbering is 1, 2, 3, 4 in section 1 and 5, 6, 7, 8 in section 2. It does not
+  restart at 1. Every one of the eight cards shows its number.
+- Arrows only ever appear inside a card's own sketch. Never draw an arrow
+  between two cards, and never between the two sections.
+- Every sketch explains its card. No decorative filler icons.
+- Reproduce all text exactly as specified. Add nothing.

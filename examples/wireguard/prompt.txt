@@ -1,0 +1,151 @@
+Create a hand-drawn educational infographic in the style of a senior engineer's
+marker notes, scanned perfectly flat.
+
+CANVAS
+- Exactly 1024 x 1536 pixels. Portrait, 2:3. All content fits inside with no
+  cropping and no overflow.
+- Background is flat off-white #F7F8F8. Not pure white. Absolutely no paper
+  texture, grain, noise, vignette, shadow or physical-surface feel. Treat it as
+  a clean digital canvas.
+
+STYLE
+- Every line is hand-drawn with markers: slightly imperfect, energetic, clean.
+- Headings are marker-drawn block capitals. Body text is casual handwriting,
+  legible, slightly uneven. Nothing uses a clean digital typeface.
+- Illustrations are rough hand-drawn sketches with flat colour fills. Not
+  clipart, not flat vector icons, not 3D renders, not photographs.
+- No whiteboard frame, no sticky notes, no coloured card backgrounds behind
+  text, no drop shadows, no banner bars behind headings.
+
+COLOUR
+- Ink (title, body text, outlines): #192635
+- Accent (section 1 heading and rule, numbered circles, blurb headings): #0B7A80
+- Warning (section 2 heading and rule, cost card headings, warning triangles): #C62828
+- Illustrations may use the real brand colours of whatever they depict.
+
+TEXT ACCURACY — THIS MATTERS MORE THAN THE ART
+- Render every piece of text below EXACTLY as written. Do not paraphrase,
+  shorten, translate or improvise text.
+- Spell technical terms character by character as given.
+- Do not add any text, label, caption or watermark that is not specified below.
+- Every numbered item must show its number. The numbers run 1 to 8 continuously
+  across both sections and never restart.
+
+
+=== LAYOUT, TOP TO BOTTOM ===
+
+1. TITLE BLOCK
+Centred, very large bold ALL-CAPS marker lettering in #192635:
+
+    WIREGUARD
+
+Directly beneath the title, smaller, centred, in #192635:
+
+    1 OF 3
+
+Beneath it, a hand-drawn horizontal rule in #0B7A80 spanning most of the width.
+
+2. TWO INTRO BLURBS, side by side
+Each has a sketch on top, then a heading, then three lines of handwritten body
+text. Leave a large gap (about 70 px of empty space) between this zone and the
+section heading below it, so they read as two separate zones.
+
+
+LEFT BLURB
+  Sketch: A dark code editor window showing `static int wg_xmit(....) {`, a Linux penguin standing beside it, and a small shield badge reading `<4000 LINES`.
+  Heading (ALL CAPS, #0B7A80, underlined): WHAT IT IS:
+  Body: Under 4,000 lines of kernel code doing one job with one set of ciphers.
+
+
+RIGHT BLURB
+  Sketch: A clipboard headed `AUDIT` with three ticked checkboxes, next to a stopwatch drawn with motion lines behind it.
+  Heading (ALL CAPS, #0B7A80, underlined): WHY IT WON:
+  Body: Small enough to audit end to end, and fast enough that nobody argues about it.
+
+
+3. SECTION ONE
+
+  Heading (large, bold, ALL CAPS, #0B7A80, centred, underlined with a hand-drawn rule):
+    HOW IT WORKS
+  Subtitle (one line, sentence case, centred, ink):
+    Four design decisions that define the protocol.
+
+  Four cards in a row. Each card: the number, then the heading, then the
+  body text, then the sketch below it.
+
+  CARD 1
+    Number: the number "1" inside a hand-drawn outline circle in #0B7A80
+    Heading (ALL CAPS, ink): PUBLIC KEYS ONLY
+    Body: Each peer is identified by a single 32-byte public key. No certificates, no usernames, no PKI to run.
+    Sketch: A key joined to a short pipe with an arrow pointing to a second key, above a paper certificate with a wax seal struck through by a large red cross.
+
+  CARD 2
+    Number: the number "2" inside a hand-drawn outline circle in #0B7A80
+    Heading (ALL CAPS, ink): CRYPTOKEY ROUTING
+    Body: Each key is bound to a list of allowed IPs. That one table decides who may send what, and where it goes.
+    Sketch: A two-column table headed `PUBLIC KEY` and `ALLOWED IPS` with four rows of key glyphs and CIDR ranges, one row highlighted, an arrow leaving it toward a network port.
+
+  CARD 3
+    Number: the number "3" inside a hand-drawn outline circle in #0B7A80
+    Heading (ALL CAPS, ink): ONE FIXED SUITE
+    Body: ChaCha20 with Poly1305, Curve25519, BLAKE2s. Nothing is negotiated, so there is nothing to downgrade.
+    Sketch: A closed box labelled `ONE SUITE` with a green tick beside it, next to a folded menu card listing `AES-GCM`, `AES-CBC`, `DES`, `3DES`, `RC4` all struck through in red.
+
+  CARD 4
+    Number: the number "4" inside a hand-drawn outline circle in #0B7A80
+    Heading (ALL CAPS, ink): SILENT BY DEFAULT
+    Body: It never replies to an unauthenticated packet. To a port scanner the service looks like it is not there.
+    Sketch: A dark server rack with a large magnifying glass held over it showing only three dots inside, and an empty speech bubble containing three dots.
+
+
+4. SECTION TWO
+
+  Heading (large, bold, ALL CAPS, #C62828, centred, underlined with a hand-drawn rule):
+    WHAT IT COSTS YOU
+  Subtitle (one line, sentence case, centred, ink):
+    The trade-offs that come with being this small.
+
+  Four cards in a row. Each card: the number, then the heading, then the
+  body text, then the sketch below it.
+
+  CARD 5
+    Number: a warning triangle in #C62828, then the number "5." with a full stop
+    Heading (ALL CAPS, #C62828): UDP ONLY
+    Body: There is no TCP fallback. If the network blocks UDP, you are simply not connecting.
+    Sketch: A wide pipe labelled `UDP` slamming into a brick wall and shattering at the point of contact.
+
+  CARD 6
+    Number: a warning triangle in #C62828, then the number "6." with a full stop
+    Heading (ALL CAPS, #C62828): THE PEER MAPPING
+    Body: The server keeps the key-to-IP table. On somebody else's server that is a persistent identifier for you.
+    Sketch: An open ledger book with columns `PUBLIC KEY` and `LAST SEEN IP`, four rows, one highlighted, and a large eye watching from above a server rack.
+
+  CARD 7
+    Number: a warning triangle in #C62828, then the number "7." with a full stop
+    Heading (ALL CAPS, #C62828): KEY MANAGEMENT IS YOURS
+    Body: No usernames, no per-user credentials, no simple revocation once you have many peers.
+    Sketch: An open upturned hand with four keys floating above it and a question mark hanging among them.
+
+  CARD 8
+    Number: a warning triangle in #C62828, then the number "8." with a full stop
+    Heading (ALL CAPS, #C62828): ALL ENDPOINTS UPDATE TOGETHER
+    Body: No cipher agility means if a primitive ever breaks, everything must be upgraded at once.
+    Sketch: A clock at the top connected by branching lines to four devices in a row, each with an upward arrow beneath it.
+
+
+5. BYLINE
+Bottom right corner, small ALL-CAPS lettering in #192635:
+
+    JIGESH SHEORAN
+
+
+=== RULES THE RENDER MUST OBEY ===
+
+- Do NOT draw the topic name anywhere except the title block at the very top.
+  No second title, no heading repeating the subject above a section.
+- Numbering is 1, 2, 3, 4 in section 1 and 5, 6, 7, 8 in section 2. It does not
+  restart at 1. Every one of the eight cards shows its number.
+- Arrows only ever appear inside a card's own sketch. Never draw an arrow
+  between two cards, and never between the two sections.
+- Every sketch explains its card. No decorative filler icons.
+- Reproduce all text exactly as specified. Add nothing.

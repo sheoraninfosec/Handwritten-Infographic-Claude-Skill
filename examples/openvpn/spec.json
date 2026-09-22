@@ -1,0 +1,74 @@
+{
+  "layout": "explainer",
+  "title": "OPENVPN",
+  "series": "2 OF 3",
+  "accent": "#CF5E16",
+  "byline": "JIGESH SHEORAN",
+
+  "blurbs": {
+    "left": {
+      "heading": "WHAT IT IS:",
+      "body": "A tunnel built on the same TLS your browser already uses, running in userspace.",
+      "draw": "A browser window showing a green padlock and the text `https://`, with a globe tilted behind its right edge."
+    },
+    "right": {
+      "heading": "WHY IT SURVIVES:",
+      "body": "It can sit on TCP 443 and become almost indistinguishable from normal web traffic.",
+      "draw": "A hand-drawn cloud labelled `TCP 443` with a green ticked shield in front of it and a server stack behind."
+    }
+  },
+
+  "how": {
+    "heading": "HOW IT WORKS",
+    "subtitle": "Four design decisions that define the protocol.",
+    "cards": [
+      {
+        "heading": "TLS UNDERNEATH",
+        "body": "The tunnel is established with the same handshake your browser performs, through OpenSSL or mbedTLS.",
+        "draw": "A browser window with a green padlock, an orange beam labelled `TLS` running from it into the mouth of a stone tunnel."
+      },
+      {
+        "heading": "CERTIFICATES AND USERS",
+        "body": "Full X.509 identity, optional username and password, and revocation lists for taking access away.",
+        "draw": "A certificate headed `X.509` with a ribbon seal, beside a list headed `REVOKED LIST` with `user2` struck through in red, and a user avatar above."
+      },
+      {
+        "heading": "RUNS IN USERSPACE",
+        "body": "It is an ordinary program, not kernel code. Easy to port and sandbox, slower than a kernel datapath.",
+        "draw": "A box labelled `APPLICATION (OPENVPN)` above a dashed line, a box labelled `KERNEL` below it, and two envelopes crossing the line between them."
+      },
+      {
+        "heading": "ANY TRANSPORT, ANY PORT",
+        "body": "UDP or TCP, on whichever port you choose, including 443 where it blends into HTTPS.",
+        "draw": "A cartoon parcel labelled `PACKET` wearing sunglasses, walking confidently past a guard booth labelled `FILTER` with its barrier raised."
+      }
+    ]
+  },
+
+  "costs": {
+    "heading": "WHAT IT COSTS YOU",
+    "subtitle": "The price of all that flexibility.",
+    "cards": [
+      {
+        "heading": "A LARGE ATTACK SURFACE",
+        "body": "Hundreds of thousands of lines once the TLS library is counted. More to audit and more to patch.",
+        "draw": "A tall stack of paper labelled `OPENVPN + TLS LIB` with a magnifying glass resting against its side."
+      },
+      {
+        "heading": "SLOWER",
+        "body": "Userspace processing and per-packet overhead leave it measurably behind kernel datapaths on throughput and latency.",
+        "draw": "Two horizontal bars, a short one labelled `OPENVPN (USERSPACE)` and a longer one labelled `KERNEL DATAPATH`, with a stopwatch beside them."
+      },
+      {
+        "heading": "EASY TO MISCONFIGURE",
+        "body": "A wide configuration surface and negotiated ciphers mean weak setups are entirely possible.",
+        "draw": "A numbered config file headed `client.conf` with three of its twelve lines struck through in red, and a large question mark beside it."
+      },
+      {
+        "heading": "TCP OVER TCP",
+        "body": "Running it on TCP for stealth stacks one retransmission scheme on another and collapses under packet loss.",
+        "draw": "A wide pipe labelled `TCP` with a narrower pipe labelled `TCP` inside it, the inner one knotted and tangled at the far end, envelopes spilling out."
+      }
+    ]
+  }
+}

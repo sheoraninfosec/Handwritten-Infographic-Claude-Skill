@@ -1,0 +1,74 @@
+{
+  "layout": "explainer",
+  "title": "TOPIC NAME",
+  "series": "",
+  "accent": "#0B7A80",
+  "byline": "YOUR NAME",
+
+  "blurbs": {
+    "left": {
+      "heading": "WHAT IT IS:",
+      "body": "One sentence, 10 to 18 words, saying what the thing actually is.",
+      "draw": "A specific small scene with named objects and any label text in backticks."
+    },
+    "right": {
+      "heading": "WHY IT WON:",
+      "body": "One sentence, 10 to 18 words, saying why it persists in the real world.",
+      "draw": "A specific small scene with named objects and any label text in backticks."
+    }
+  },
+
+  "how": {
+    "heading": "HOW IT WORKS",
+    "subtitle": "Four design decisions that define the protocol.",
+    "cards": [
+      {
+        "heading": "FIRST DECISION",
+        "body": "12 to 26 words explaining the decision and what it buys.",
+        "draw": "A specific scene. Name the objects, their arrangement, and any `label text`."
+      },
+      {
+        "heading": "SECOND DECISION",
+        "body": "12 to 26 words.",
+        "draw": "A specific scene."
+      },
+      {
+        "heading": "THIRD DECISION",
+        "body": "12 to 26 words.",
+        "draw": "A specific scene."
+      },
+      {
+        "heading": "FOURTH DECISION",
+        "body": "12 to 26 words.",
+        "draw": "A specific scene."
+      }
+    ]
+  },
+
+  "costs": {
+    "heading": "WHAT IT COSTS YOU",
+    "subtitle": "The price of whatever the design bought above.",
+    "cards": [
+      {
+        "heading": "FIRST COST",
+        "body": "12 to 26 words stating a real trade-off the reader inherits.",
+        "draw": "A specific scene."
+      },
+      {
+        "heading": "SECOND COST",
+        "body": "12 to 26 words.",
+        "draw": "A specific scene."
+      },
+      {
+        "heading": "THIRD COST",
+        "body": "12 to 26 words.",
+        "draw": "A specific scene."
+      },
+      {
+        "heading": "FOURTH COST",
+        "body": "12 to 26 words.",
+        "draw": "A specific scene."
+      }
+    ]
+  }
+}

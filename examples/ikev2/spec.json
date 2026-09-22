@@ -1,0 +1,74 @@
+{
+  "layout": "explainer",
+  "title": "IKEV2 / IPSEC",
+  "series": "3 OF 3",
+  "accent": "#0047CF",
+  "byline": "JIGESH SHEORAN",
+
+  "blurbs": {
+    "left": {
+      "heading": "WHAT IT IS:",
+      "body": "Two protocols working together, already built into the device in your pocket.",
+      "draw": "A phone sitting in the back pocket of a pair of jeans, with a small green padlock shield beside it."
+    },
+    "right": {
+      "heading": "WHY IT PERSISTS:",
+      "body": "It survives switching from mobile data to Wi-Fi without dropping the tunnel.",
+      "draw": "A mobile mast labelled `4G / 5G` on the left and a Wi-Fi router on the right, joined by a pipe labelled `IKEV2 / IPSEC TUNNEL`."
+    }
+  },
+
+  "how": {
+    "heading": "HOW IT WORKS",
+    "subtitle": "Four design decisions that define the protocol.",
+    "cards": [
+      {
+        "heading": "TWO PROTOCOLS, NOT ONE",
+        "body": "IKEv2 negotiates the keys. IPsec ESP actually carries the data. Most people say one and mean both.",
+        "draw": "Two joined boxes, the left labelled `IKEV2 - KEYS` and the right labelled `ESP - DATA`, drawn with a single brace underneath spanning both."
+      },
+      {
+        "heading": "LIVES IN THE KERNEL",
+        "body": "ESP is handled by the operating system's own network stack, so throughput stays high.",
+        "draw": "Three stacked boxes joined by downward arrows, labelled `USER SPACE (APPS)`, `KERNEL`, and `HARDWARE (NIC)`, with an envelope travelling down the chain."
+      },
+      {
+        "heading": "MOBIKE FOR ROAMING",
+        "body": "A dedicated extension lets the tunnel survive an address change without renegotiating from scratch.",
+        "draw": "A person walking rightward carrying a phone, a long pipe running behind them from a mobile mast on the left to a Wi-Fi router on the right, unbroken."
+      },
+      {
+        "heading": "ALREADY ON YOUR DEVICE",
+        "body": "Built into iOS, macOS, Windows and Android. No third-party client to install or trust.",
+        "draw": "A phone, a laptop and a tablet side by side, each showing a platform logo and each with a small blue ticked badge in its corner."
+      }
+    ]
+  },
+
+  "costs": {
+    "heading": "WHAT IT COSTS YOU",
+    "subtitle": "The price of a very large and very old specification.",
+    "cards": [
+      {
+        "heading": "FIXED PORTS",
+        "body": "UDP 500 and 4500, and nowhere else to go. Trivial for a network to block deliberately.",
+        "draw": "A brick wall with two pipes labelled `500` and `4500` hitting it and stopping dead, each marked with a red cross."
+      },
+      {
+        "heading": "A HUGE NEGOTIATION SURFACE",
+        "body": "Many options, several of them historically weak, and plenty of ways to configure it badly.",
+        "draw": "A long list headed `AUTH / ENC / DH` naming `DES`, `3DES`, `AES-128`, `RC4`, `SHA-1` and more, four entries ringed in red, a question mark beside it."
+      },
+      {
+        "heading": "NAT IS AWKWARD",
+        "body": "ESP has no port numbers of its own, so it has to be wrapped in UDP just to survive a home router.",
+        "draw": "A box labelled `ESP PACKET (NO PORTS)` above a larger box labelled `UDP ENVELOPE 4500` containing it, with an arrow down to a home router labelled `NAT`."
+      },
+      {
+        "heading": "IMPLEMENTATIONS VARY",
+        "body": "The specification is enormous, so quality and interoperability differ sharply between vendors.",
+        "draw": "Three servers labelled `VENDOR A`, `VENDOR B` and `VENDOR C` joined by dashed lines, with one of the three links marked by a red cross."
+      }
+    ]
+  }
+}
